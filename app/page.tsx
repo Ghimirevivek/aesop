@@ -23,7 +23,7 @@ export default function Home() {
       </div>
 
       {/* Secondary Banner */}
-      <div className='bg-[#C2C2AF] text-black py-2 px-4 text-sm text-center'>
+      <div className='hidden sm:block bg-[#C2C2AF] text-black py-2 px-4 text-sm text-center'>
         <p>
           Click and Collect is now available at Hong Kong stores.{' '}
           <Link href='#' className='underline'>
@@ -109,21 +109,20 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
-      <MobileNav />
-
       {/* Hero Section */}
       <HeroCarousel />
 
-      <ContentSection
-        label='Festive giving'
-        title='A complimentary sleeve for your gifts'
-        description="Inspired by the verve of the season, a specially designed gift sleeve will swaddle your purchases when you select the 'gift packaging' option at checkout. Exclusions apply."
-        buttonText='Explore gifts'
-        imageSrc='/assets/img4.jpg'
-        imageAlt='Festive gift sleeve with artistic orange and red design'
-        // backgroundColor='#D45B44'
-      />
+      <div className='mt-20'>
+        <ContentSection
+          label='Festive giving'
+          title='A complimentary sleeve for your gifts'
+          description="Inspired by the verve of the season, a specially designed gift sleeve will swaddle your purchases when you select the 'gift packaging' option at checkout. Exclusions apply."
+          buttonText='Explore gifts'
+          imageSrc='/assets/img4.jpg'
+          imageAlt='Festive gift sleeve with artistic orange and red design'
+          // backgroundColor='#D45B44'
+        />
+      </div>
 
       {/* Product Carousel Section */}
       {/* <section className='py-16 lg:py-24'>

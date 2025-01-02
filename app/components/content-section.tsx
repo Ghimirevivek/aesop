@@ -22,23 +22,26 @@ export default function ContentSection({
   backgroundColor = '#FFFEF2',
 }: ContentSectionProps) {
   return (
-    <section className='flex items-center justify-center'>
+    <section className='grid grid-cols-1 lg:grid-cols-2'>
       {/* Image Section */}
-      <div className='relative h-full w-[90%]' style={{ backgroundColor }}>
-        <div className='absolute inset-0 flex items-center justify-center'>
+      <div
+        className='flex items-center justify-center relative h-full w-full'
+        style={{ backgroundColor }}
+      >
+        <div className='flex items-center justify-center'>
           <Image
             src={imageSrc}
             alt={imageAlt}
             width={1000}
             height={1000}
-            className='w-full h-auto object-contain'
+            className='w-full h-full object-contain'
             priority
           />
         </div>
       </div>
 
       {/* Content Section */}
-      <div className='flex items-center bg-[#FFFEF2] px-6 py-12 lg:p-20'>
+      <div className='flex items-center justify-center bg-[#FFFEF2] px-6 py-12 lg:p-20 w-full'>
         <div className='max-w-md'>
           {label && (
             <span className='text-sm mb-6 block text-[#333333]'>{label}</span>
