@@ -76,7 +76,7 @@ export default function HeroCarousel() {
         <div className='hidden lg:flex items-center justify-between px-4 lg:px-16 relative ml-0 '>
           <Link
             href='/'
-            className={` relative -left-[1rem] top-[5rem] h-full transition-opacity duration-300 ease-in-out ${
+            className={` relative -left-[1rem] top-[3rem] h-full transition-opacity duration-300 ease-in-out ${
               isAnimating ? 'opacity-0' : 'opacity-100'
             }`}
           >
@@ -109,17 +109,17 @@ export default function HeroCarousel() {
             </h2> */}
           </Link>
           <div
-            className={`relative -top-[3rem] -left-[0rem] xl:-left-[2rem] max-w-md transition-opacity duration-300 ease-in-out ${
+            className={`relative -top-[3rem] -left-[0rem] xl:-left-[2rem] max-w-sm transition-opacity duration-300 ease-in-out ${
               isAnimating ? 'opacity-0' : 'opacity-100'
             }`}
           >
-            <span className='text-sm mb-6 block'>
+            <span className='text-sm mb-3 block'>
               {slides[currentSlide].label}
             </span>
-            <h1 className='text-[1.75rem] xl:text-[2.25rem] leading-tight mb-6'>
+            <h1 className='text-[1.75rem] 2xl:text-[2.25rem] leading-tight mb-6'>
               {slides[currentSlide].title}
             </h1>
-            <p className='text-lg mb-8 leading-relaxed'>
+            <p className='text-md 2xl:text-lg mb-6 leading-relaxed'>
               {slides[currentSlide].description}
             </p>
             <Button
