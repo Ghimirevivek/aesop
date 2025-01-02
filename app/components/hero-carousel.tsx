@@ -196,7 +196,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Navigation */}
-      <div className='absolute -bottom-10 left-0 right-0 flex items-center justify-center px-4 lg:px-16'>
+      <div className='absolute -bottom-10 left-0 right-0 flex items-center justify-center px-4 lg:px-16 z-40'>
         <div className='flex items-center gap-4'>
           <Button
             variant='ghost'

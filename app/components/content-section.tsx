@@ -3,46 +3,59 @@ import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
 interface ContentSectionProps {
+  label?: string;
   title: string;
   description: string;
   buttonText: string;
   imageSrc: string;
   imageAlt: string;
-  reverse?: boolean;
+  backgroundColor?: string;
 }
 
 export default function ContentSection({
+  label,
   title,
   description,
   buttonText,
   imageSrc,
   imageAlt,
-  reverse = false,
+  backgroundColor = '#FFFEF2',
 }: ContentSectionProps) {
   return (
-    <section className='py-16 lg:py-24 bg-[#F6F5E8]'>
-      <div className='container mx-auto px-4'>
-        <div
-          className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
-            reverse ? 'lg:flex-row-reverse' : ''
-          }`}
-        >
-          <div className='relative aspect-[4/3]'>
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              fill
-              className='object-cover'
-            />
-          </div>
-          <div className='max-w-xl'>
-            <h2 className='text-2xl lg:text-3xl mb-4'>{title}</h2>
-            <p className='text-lg mb-8'>{description}</p>
-            <Button className='group' variant='outline'>
-              {buttonText}
-              <ChevronRight className='ml-2 h-4 w-4 transition-transform group-hover:translate-x-1' />
-            </Button>
-          </div>
+    <section className='min-h-[80vh]  grid grid-cols-1 lg:grid-cols-2'>
+      {/* Image Section */}
+      <div className='relative h-full w-full ' style={{ backgroundColor }}>
+        <div className='absolute inset-0 flex items-center justify-center'>
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={1000}
+            height={1000}
+            className='w-full h-auto object-contain'
+            priority
+          />
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className='flex items-center bg-[#FFFEF2] px-6 py-12 lg:p-24'>
+        <div className='max-w-md'>
+          {label && (
+            <span className='text-sm mb-6 block text-[#333333]'>{label}</span>
+          )}
+          <h2 className='text-[1.75rem] lg:text-[2.25rem] leading-[1.25] mb-6 font-light'>
+            {title}
+          </h2>
+          <p className='text-lg mb-8 leading-[1.7] text-[#333333]'>
+            {description}
+          </p>
+          <Button
+            variant='outline'
+            className='w-full lg:w-auto group border-[#333] text-[#333] hover:bg-[#333] hover:text-white rounded-none px-8 py-6 h-auto'
+          >
+            {buttonText}
+            <ChevronRight className='ml-2 h-4 w-4 transition-transform group-hover:translate-x-1' />
+          </Button>
         </div>
       </div>
     </section>
