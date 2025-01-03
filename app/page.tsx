@@ -125,18 +125,11 @@ export default function Home() {
       </div>
 
       {/* Product Carousel Section */}
-      {/* <section className='py-16 lg:py-24'>
+      <section className='py-16 lg:py-24'>
         <div className='container mx-auto px-4'>
-          <div className='max-w-2xl'>
-            <h2 className='text-2xl lg:text-3xl mb-4'>For the body</h2>
-            <p className='text-lg mb-8'>
-              An expression of care for your body, formulated to cleanse,
-              replenish, and nourish in a variety of formats.
-            </p>
-          </div>
           <ProductCarousel />
         </div>
-      </section> */}
+      </section>
       {/* Content Sections */}
 
       <ContentSection
