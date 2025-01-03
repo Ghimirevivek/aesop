@@ -123,6 +123,7 @@ export default function Home() {
           imageSrc='/assets/img4.jpg'
           imageAlt='Festive gift sleeve with artistic orange and red design'
           // backgroundColor='#D45B44'
+          reverse
         />
       </div>
       <ProductGrid />
@@ -150,6 +151,7 @@ export default function Home() {
         buttonText='Learn more about this service'
         imageSrc='/assets/img5.jpg'
         imageAlt='Tokens of appreciation'
+        reverse
       />
       <StoreLocator />
 

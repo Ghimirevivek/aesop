@@ -10,6 +10,7 @@ interface ContentSectionProps {
   imageSrc: string;
   imageAlt: string;
   backgroundColor?: string;
+  reverse?: boolean;
 }
 
 export default function ContentSection({
@@ -20,28 +21,20 @@ export default function ContentSection({
   imageSrc,
   imageAlt,
   backgroundColor = '#FFFEF2',
+  reverse = false,
 }: ContentSectionProps) {
   return (
-    <section className='grid grid-cols-1 lg:grid-cols-2'>
-      {/* Image Section */}
-      <div
-        className='flex items-center justify-center relative h-full w-full'
-        style={{ backgroundColor }}
-      >
-        <div className='flex items-center justify-center'>
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            width={1000}
-            height={1000}
-            className='w-full h-full object-contain'
-            priority
-          />
-        </div>
-      </div>
-
+    <section
+      className={`my-8 grid grid-cols-1 lg:grid-cols-${
+        reverse ? '[58%,42%]' : '[42%,58%]'
+      }`}
+    >
       {/* Content Section */}
-      <div className='flex items-center justify-center bg-[#FFFEF2] px-6 py-12 lg:p-20 w-full'>
+      <div
+        className={`flex items-center justify-center bg-[#FFFEF2] px-6 py-12 lg:p-20 w-full ${
+          reverse ? 'order-last lg:order-last' : ''
+        }`}
+      >
         <div className='max-w-md'>
           {label && (
             <span className='text-sm mb-6 block text-[#333333]'>{label}</span>
@@ -59,6 +52,25 @@ export default function ContentSection({
             {buttonText}
             <ChevronRight className='ml-2 h-4 w-4 transition-transform group-hover:translate-x-1' />
           </Button>
+        </div>
+      </div>
+
+      {/* Image Section */}
+      <div
+        className={`flex items-center justify-center relative h-full w-full ${
+          reverse ? 'order-first lg:order-first' : ''
+        }`}
+        style={{ backgroundColor }}
+      >
+        <div className='flex items-center justify-center'>
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={1000}
+            height={1000}
+            className='w-full h-full object-contain'
+            priority
+          />
         </div>
       </div>
     </section>

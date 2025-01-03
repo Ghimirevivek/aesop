@@ -35,9 +35,9 @@ export default function StoreLocator() {
   };
 
   return (
-    <section className='grid grid-cols-1 lg:grid-cols-2 min-h-[80vh] bg-[#FFFEF2]'>
+    <section className='grid grid-cols-1 lg:grid-cols-[42%,58%] min-h-[80vh] bg-[#FFFEF2]'>
       {/* Content */}
-      <div className='flex flex-col justify-center p-8 lg:p-16 xl:p-24'>
+      <div className='flex flex-col items-start justify-start p-8 lg:p-24'>
         <h2 className='text-[2rem] lg:text-[2.25rem] leading-[1.25] mb-6 font-light'>
           Store locator
         </h2>
@@ -62,7 +62,7 @@ export default function StoreLocator() {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className='relative w-full h-full aspect-[5/3]'>
+          <div className='relative w-full h-full '>
             {storeImages.map((image, index) => (
               <div
                 key={index}
