@@ -67,8 +67,6 @@ export default function ProductCarousel() {
     handleScroll();
   }, [currentIndex]);
 
-  const progressWidth = `${((currentIndex + 1) / products.length) * 100}%`;
-
   return (
     <div
       className='relative'
@@ -106,10 +104,10 @@ export default function ProductCarousel() {
       </div>
 
       {/* Progress Bar */}
-      <div className='h-[2px] w-full bg-[#333]/10 mt-8'>
+      <div className='relative h-[2px] w-full bg-[#333]/10 mt-8 overflow-hidden'>
         <div
-          className='h-full bg-[#333] transition-all duration-300 ease-out'
-          style={{ width: progressWidth }}
+          className='absolute h-full bg-[#333] w-[25%] transition-transform duration-300 ease-out'
+          style={{ transform: `translateX(${currentIndex * 100}%)` }}
         />
       </div>
 
