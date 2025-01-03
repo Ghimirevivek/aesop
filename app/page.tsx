@@ -7,6 +7,7 @@ import HeroCarousel from './components/hero-carousel';
 import ContentSection from './components/content-section';
 import Footer from './components/footer';
 import MobileNav from './components/mobile-nav';
+import ProductGrid from './components/product-grid';
 
 export default function Home() {
   return (
@@ -123,7 +124,7 @@ export default function Home() {
           // backgroundColor='#D45B44'
         />
       </div>
-
+      <ProductGrid />
       {/* Product Carousel Section */}
       <section className='py-16 lg:py-24'>
         <div className='container mx-auto px-4'>
