@@ -25,14 +25,14 @@ export default function ContentSection({
 }: ContentSectionProps) {
   return (
     <section
-      className={`my-10 grid grid-cols-1 lg:grid-cols-${
-        reverse ? '[42%,58%]' : '[58%,42%]'
+      className={`my-10 grid grid-cols-1 lg:grid-cols-[58%,42%] ${
+        reverse ? 'lg:[grid-cols-[42%,58%]]' : ''
       }`}
     >
       {/* Image Section */}
       <div
         className={`flex items-center justify-center relative h-full w-full ${
-          reverse ? 'order-first lg:order-last' : ''
+          reverse ? 'lg:order-last' : 'lg:order-first'
         }`}
         style={{ backgroundColor }}
       >
@@ -51,7 +51,7 @@ export default function ContentSection({
       {/* Content Section */}
       <div
         className={`flex items-center justify-center bg-[#FFFEF2] px-6 py-12 lg:p-20 w-full ${
-          reverse ? 'order-last lg:order-first' : ''
+          reverse ? 'lg:order-first' : 'lg:order-last'
         }`}
       >
         <div className='max-w-full'>
