@@ -8,6 +8,7 @@ import ContentSection from './components/content-section';
 import Footer from './components/footer';
 import MobileNav from './components/mobile-nav';
 import ProductGrid from './components/product-grid';
+import StoreLocator from './components/store-locator';
 
 export default function Home() {
   return (
@@ -150,6 +151,7 @@ export default function Home() {
         imageSrc='/assets/img5.jpg'
         imageAlt='Tokens of appreciation'
       />
+      <StoreLocator />
 
       {/* Footer */}
       <Footer />
