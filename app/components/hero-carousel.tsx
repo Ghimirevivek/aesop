@@ -69,7 +69,7 @@ export default function HeroCarousel() {
   }, [isPlaying, nextSlide]);
 
   return (
-    <section className='relative h-[50vh] lg:h-[80vh] bg-[#FFFEF2]'>
+    <section className='relative min-h-[50vh] h-auto lg:h-[80vh] bg-[#FFFEF2]'>
       <div className='grid h-full lg:grid-cols-2'>
         {/* Content */}
         <MobileNav />
@@ -170,7 +170,7 @@ export default function HeroCarousel() {
               Aēsop
             </h2> */}
           </Link>
-          <div className='w-full h-full relative overflow-hidden'>
+          <div className='w-full h-full min-h-[50vh] relative overflow-hidden'>
             {slides[currentSlide].type === 'video' ? (
               <video
                 key={currentSlide}
@@ -187,7 +187,7 @@ export default function HeroCarousel() {
                 src={slides[currentSlide].image}
                 alt={slides[currentSlide].title}
                 fill
-                className='absolute object-cover'
+                className='h-full w-full lg:absolute object-cover'
                 priority
               />
             )}
@@ -233,6 +233,30 @@ export default function HeroCarousel() {
             <Play className='h-6 w-6' />
           )}
         </Button>
+      </div>
+      <div className='flex lg:hidden items-center justify-center px-4 lg:px-16 '>
+        <div
+          className={`my-10 max-w-md transition-opacity duration-300 ease-in-out ${
+            isAnimating ? 'opacity-0' : 'opacity-100'
+          }`}
+        >
+          <span className='text-sm mb-3 block'>
+            {slides[currentSlide].label}
+          </span>
+          <h1 className='text-[1.75rem] 2xl:text-[2.25rem] leading-tight mb-6'>
+            {slides[currentSlide].title}
+          </h1>
+          <p className='text-md 2xl:text-lg mb-6 leading-relaxed'>
+            {slides[currentSlide].description}
+          </p>
+          <Button
+            variant='outline'
+            className='group border-[#333] text-[#333] hover:bg-[#333] hover:text-white rounded-none px-8 py-6 h-auto'
+          >
+            {slides[currentSlide].buttonText}
+            <ChevronRight className='ml-2 h-4 w-4 transition-transform group-hover:translate-x-1' />
+          </Button>
+        </div>
       </div>
     </section>
   );
