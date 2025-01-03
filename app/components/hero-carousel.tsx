@@ -140,7 +140,7 @@ export default function HeroCarousel() {
         >
           <Link
             href='/'
-            className={`hidden sm:block lg:hidden z-40 absolute top-[3rem] left-[3rem]  h-full transition-opacity duration-300 ease-in-out `}
+            className={`hidden z-40 absolute top-[3rem] left-[3rem]  h-full transition-opacity duration-300 ease-in-out `}
           >
             <svg
               aria-labelledby='aesop-:rd:'

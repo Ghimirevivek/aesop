@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function MobileNav() {
   return (
-    <div className='sm:hidden absolute top-0 left-0 right-0 z-50'>
+    <div className='lg:hidden absolute top-0 left-0 right-0 z-50'>
       <div className='flex items-center justify-end px-4 py-4'>
         <Link href='/' className={`z-40 mr-auto`}>
           <svg
